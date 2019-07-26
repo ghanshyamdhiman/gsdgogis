@@ -1,0 +1,131 @@
+<modification>
+
+	<id>Add current date and time in admin</id>
+	<version>1.0</version>
+	<vqmver>2.5.1</vqmver>
+	<author>Brunte27</author>
+
+	<file name="admin/view/template/common/header.tpl">
+		<operation>
+			<search position="before"><![CDATA[
+			</head>
+			]]></search>
+			<add><![CDATA[
+			<script language="JavaScript" type="text/javascript">
+function clock() {
+var d = new Date();
+var month = d.getMonth()
+var day = d.getDate();
+var hours = d.getHours();
+var minutes = d.getMinutes();
+var seconds = d.getSeconds();
+
+if (month == 0) month = "<?php echo $text_january; ?>"
+ else if (month == 1) month = "<?php echo $text_february; ?>"
+ else if (month == 2) month = "<?php echo $text_march; ?>"
+ else if (month == 3) month = "<?php echo $text_april; ?>"
+ else if (month == 4) month = "<?php echo $text_may; ?>"
+ else if (month == 5) month = "<?php echo $text_june; ?>"
+ else if (month == 6) month = "<?php echo $text_july; ?>"
+ else if (month == 7) month = "<?php echo $text_august; ?>"
+ else if (month == 8) month = "<?php echo $text_september; ?>"
+ else if (month == 9) month = "<?php echo $text_october; ?>"
+ else if (month == 10) month = "<?php echo $text_november; ?>"
+ else if (month == 11) month = "<?php echo $text_december; ?>";
+
+if (day <= 9) day = "0" + day;
+if (hours <= 9) hours = "0" + hours;
+if (minutes <= 9) minutes = "0" + minutes;
+if (seconds <= 9) seconds = "0" + seconds;
+
+date_time =+ day + " " + month + " " + d.getFullYear() +
+"<?php echo $text_year; ?><br />"+ hours + ":" + minutes + ":" + seconds;
+if (document.layers) {
+ document.layers.doc_time.document.write(date_time);
+ document.layers.doc_time.document.close();
+}
+else document.getElementById("doc_time").innerHTML = date_time;
+ setTimeout("clock()", 1000);
+}
+</script>
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after" offset="1"><![CDATA[    <a href="<?php echo $home; ?>" class="navbar-brand"><img src="view/image/logo.png" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" /></a></div>]]></search>
+			<add><![CDATA[
+			<div id="doc_time" style="float:left;position:relative;top:13px;left:15px;color:black">
+	  <script language="JavaScript" type="text/javascript">
+		 clock();
+	  </script>
+	</div>
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/controller/common/header.php">
+	    <operation>
+		    <search position="after"><![CDATA[		$data['text_logout'] = $this->language->get('text_logout');]]></search>
+			<add><![CDATA[
+			$data['text_january'] = $this->language->get('text_january');
+		$data['text_february'] = $this->language->get('text_february');
+		$data['text_march'] = $this->language->get('text_march');
+		$data['text_april'] = $this->language->get('text_april');
+		$data['text_may'] = $this->language->get('text_may');
+		$data['text_june'] = $this->language->get('text_june');
+		$data['text_july'] = $this->language->get('text_july');
+		$data['text_august'] = $this->language->get('text_august');
+		$data['text_september'] = $this->language->get('text_september');
+		$data['text_october'] = $this->language->get('text_october');
+		$data['text_november'] = $this->language->get('text_november');
+		$data['text_december'] = $this->language->get('text_december');
+		$data['text_year'] = $this->language->get('text_year');
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin/language/english/common/header.php">
+	    <operation>
+		    <search position="after"><![CDATA[// Text]]></search>
+			<add><![CDATA[
+			// Months
+$_['text_january']                     = 'january';
+$_['text_february']                    = 'february';
+$_['text_march']                       = 'march';
+$_['text_april']                       = 'april';
+$_['text_may']                         = 'may';
+$_['text_june']                        = 'june';
+$_['text_july']                        = 'july';
+$_['text_august']                      = 'august';
+$_['text_september']                   = 'september';
+$_['text_october']                     = 'october';
+$_['text_november']                    = 'november';
+$_['text_december']                    = 'december';
+$_['text_year']                        = '';
+			]]></add>
+		</operation>
+	</file>
+<!-- EDIT THIS LINE BELOW	your language change * to the language you use for example to swedish -->
+<!--=============================*>===and change month to what you want it to say in your language.-->	
+	<file name="admin/language/*/common/header.php">
+	    <operation>
+		    <search position="after"><![CDATA[// Text]]></search>
+			<add><![CDATA[
+			// Months
+$_['text_january']                     = 'Januari';
+$_['text_february']                    = 'Februari';
+$_['text_march']                       = 'Mars';
+$_['text_april']                       = 'April';
+$_['text_may']                         = 'Maj';
+$_['text_june']                        = 'Juni';
+$_['text_july']                        = 'Juli';
+$_['text_august']                      = 'Agusti';
+$_['text_september']                   = 'September';
+$_['text_october']                     = 'Oktober';
+$_['text_november']                    = 'November';
+$_['text_december']                    = 'December';
+$_['text_year']                        = '';
+			]]></add>
+		</operation>
+	</file>
+	
+</modification>

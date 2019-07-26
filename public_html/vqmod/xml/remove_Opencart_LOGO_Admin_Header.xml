@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+   <id>Remove Opencart LOGO Admin Header</id>
+   <version>1.0</version>
+   <vqmver>2.X</vqmver>
+   <author>Jitendra</author>
+   <file name="admin/view/template/common/header.tpl">
+       <operation info="Remove Opencart LOGO Admin Header">
+           <search position="replace"><![CDATA[
+           <a href="<?php echo $home; ?>" class="navbar-brand"><img src="view/image/logo.png" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" /></a>
+           ]]></search>
+           <add><![CDATA[
+           ]]></add>
+       </operation>
+   </file>
+</modification>

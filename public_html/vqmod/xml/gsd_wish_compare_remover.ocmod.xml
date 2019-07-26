@@ -1,0 +1,102 @@
+<modification>
+    <name>GSD WishCompare Remover</name>
+    <version>1.0</version>
+    <link>http://gogis.in/gsdocextensions</link>
+    <author>Ghanshyam Dhiman</author>
+    <code>gsd_wish_compare_remover</code>
+
+<file path="catalog/view/theme/default/template/module/bestseller.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+	</file>
+	 <file path="catalog/view/theme/*/template/module/featured.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+	</file>
+<file path="catalog/view/theme/default/template/module/latest.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+	</file>
+<file path="catalog/view/theme/default/template/product/special.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+    </file>
+
+ <file path="catalog/view/theme/default/template/product/category.tpl">
+        <operation>
+            <search><![CDATA[ <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+    </file>
+
+ <file path="catalog/view/theme/default/template/product/manufacturer_info.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+    </file>
+ <file path="catalog/view/theme/default/template/product/product.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+         <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+     </file>
+
+<file path="catalog/view/theme/default/template/product/search.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+    </file>
+   
+    <file path="catalog/view/theme/default/template/common/header.tpl">
+        <operation>
+            <search><![CDATA[<button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>]]></search>
+        <add position="replace"><![CDATA[]]></add>
+   
+    </file>
+	
+	<file path="catalog/view/theme/default/template/common/footer.tpl">
+        <operation>
+            <search><![CDATA[<li><a href="<?php echo $compare; ?>"><?php echo $text_compare; ?></a></li>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+    </file>
+
+
+
+   
+
+    
+
+    
+	<file path="catalog/view/theme/default/template/account/account.tpl">
+        <operation>
+            <search><![CDATA[<li><a href="<?php echo $compare; ?>"><?php echo $text_compare; ?></a></li>]]></search>
+            <add position="replace"><![CDATA[]]></add>
+        </operation>
+        
+    </file>
+
+   
+   
+	
+	
+	
+
+		
+	
+</modification>
+ 

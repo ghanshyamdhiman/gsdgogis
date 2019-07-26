@@ -1,0 +1,14 @@
+---------- Date: 2019-05-24 23:57:26 ~ IP : 46.229.168.137 ----------
+REQUEST URI : /index.php?route=checkout%2Fcart
+MOD DETAILS:
+   modFile   : /home1/xn0edj5ctzf/public_html/vqmod/xml/remove_coupon_voucher.xml
+   id        : recommendation
+   version   : 1.1.x and 1.5.x
+   vqmver    : 1.5.6
+   author    : vqmod.com
+
+File Name    : catalog/controller/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): public function country() {
+----------------------------------------------------------------------
+
+

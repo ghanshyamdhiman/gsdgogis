@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+   <id>Remove Powered By Opencart Store Footer</id>
+   <version>1.0</version>
+   <vqmver>2.X</vqmver>
+   <author>Jitendra</author>
+   <file name="catalog/view/theme/*/template/common/footer.tpl">
+       <operation info="Remove Powered By Opencart Store Footer">
+           <search position="replace"><![CDATA[
+           <p><?php echo $powered; ?></p>
+           ]]></search>
+           <add><![CDATA[
+           ]]></add>
+       </operation>
+   </file>
+</modification>

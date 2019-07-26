@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Viethemes - Redirect to Cart Page after Product Added</name>
+  <code>viethemes_redirect_to_cart_page_after_product_added</code>
+  <version>1.0</version>
+  <author>Viethemes</author>
+  <link>http://www.viethemes.com</link>
+    <file path="catalog/view/theme/default/template/common/header.tpl">
+    <operation>
+      <search><![CDATA[</head>]]></search>
+      <add position="before"><![CDATA[
+        <script>
+          cart.add = function(product_id, quantity) {
+            $.ajax({
+              url: 'index.php?route=checkout/cart/add',
+              type: 'post',
+              data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+              dataType: 'json',
+              beforeSend: function() {
+                $('#cart > button').button('loading');
+              },
+              success: function(json) {
+                $('.alert, .text-danger').remove();
+
+                $('#cart > button').button('reset');
+
+                if (json['redirect']) {
+                  location = json['redirect'];
+                }
+
+                if (json['success']) {
+                  $('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
+                  $('#cart-total').html(json['total']);
+
+                  location = '<?php global $url; echo $url->link('checkout/cart'); ?>';
+                }
+              }
+            });
+          };
+        </script>
+      ]]></add>
+    </operation>
+  </file>
+
+  <file path="catalog/view/theme/default/template/product/product.tpl">
+    <operation>
+      <search><![CDATA[$('html, body').animate({ scrollTop: 0 }, 'slow');]]></search>
+      <add position="replace"><![CDATA[location = '<?php global $url; echo $url->link('checkout/cart'); ?>';]]></add>
+    </operation>
+  </file>  
+
+</modification>
